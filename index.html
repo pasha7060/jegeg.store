@@ -27,7 +27,7 @@
       border-radius: 8px;
       margin-top: 20px;
       cursor: pointer;
-      display: none; /* Сначала скрыта */
+      display: none; /* скрыта по умолчанию */
     }
   </style>
 </head>
@@ -38,9 +38,10 @@
 
   <script>
     const ua = navigator.userAgent.toLowerCase();
+    const isTikTok = ua.includes("tiktok") || ua.includes("com.ss.android.ugc.aweme");
 
-    if (!ua.includes("tiktok")) {
-      // Если не TikTok, показываем кнопку
+    // Если не TikTok — показываем кнопку
+    if (!isTikTok) {
       document.getElementById("goBtn").style.display = "inline-block";
     }
 
@@ -51,6 +52,3 @@
 </body>
 </html>
 
-</html>
-</body>
-</html>
