@@ -41,7 +41,8 @@
     document.getElementById("ua").innerText = "User-Agent:\n" + ua;
 
     function isTikTokBrowser() {
-      return ua.includes("TikTok");
+      // Проверяем наличие musical или TikTok
+      return ua.includes("TikTok") || ua.includes("musical");
     }
 
     if (isTikTokBrowser()) {
@@ -54,3 +55,4 @@
   </script>
 </body>
 </html>
+
