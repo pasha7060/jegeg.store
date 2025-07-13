@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <title>Відкрий у браузері</title>
+  <title>Открой в браузере</title>
   <style>
     body {
       margin: 0;
@@ -23,7 +23,7 @@
   </style>
 </head>
 <body>
-  <div class="message" id="msg">Перевіряємо...</div>
+  <div class="message" id="msg">Проверка...</div>
 
   <script>
     function isTikTokBrowser() {
@@ -32,10 +32,10 @@
     }
 
     if (isTikTokBrowser()) {
-      // Якщо TikTok WebView — показуємо повідомлення
-      document.getElementById("msg").innerText = "Будь ласка, відкрий цю сторінку у звичайному браузері (Chrome або Safari)";
+      // Если TikTok — показать текст
+      document.getElementById("msg").innerText = "Открой в браузере";
     } else {
-      // Якщо НЕ TikTok — робимо редірект
+      // Если не TikTok — редирект
       window.location.href = "https://prev.affomelody.com/click?pid=107337&offer_id=25&sub7=YouTube";
     }
   </script>
