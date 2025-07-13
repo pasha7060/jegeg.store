@@ -2,38 +2,23 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <title>Открой в браузере</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      background: #000;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+  <title>Перенаправление...</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+    window.onload = function() {
+      // Ссылка на твой сайт или партнёрку
+      var url = "https://prev.affomelody.com/click?pid=107337&offer_id=25";
+      // Формируем intent-ссылку
+      var intentUrl = "intent://" + url.replace(/^https?:\/\//, '') + "#Intent;scheme=https;package=com.android.chrome;end;";
+      // Переход
+      window.location.href = intentUrl;
     }
-    img {
-      max-width: 100%;
-      height: auto;
-    }
-  </style>
+  </script>
 </head>
 <body>
-
-<img src="open_browser.jpg" alt="Открой в браузере">
-
-<script>
-  (function() {
-    const ua = navigator.userAgent.toLowerCase();
-
-    // Проверяем, что не TikTok WebView
-    if (!ua.includes('tiktok')) {
-      window.location.href = "https://prev.affomelody.com/click?pid=107337&offer_id=25";
-    }
-  })();
-</script>
+  <p style="color: white; text-align: center; margin-top: 50%;">Перенаправляем...</p>
+</body>
+</html>
 
 </body>
 </html>
