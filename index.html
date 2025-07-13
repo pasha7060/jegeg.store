@@ -9,16 +9,16 @@
       padding: 0;
       background: #000;
       display: flex;
-      flex-direction: column;
-      align-items: center;
       justify-content: center;
+      align-items: center;
       height: 100vh;
-      font-family: sans-serif;
-      text-align: center;
+      width: 100vw;
+      overflow: hidden;
     }
     img {
-      max-width: 90%;
-      height: auto;
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* чтобы заполнить весь экран, сохраняя пропорции */
     }
   </style>
 </head>
@@ -33,12 +33,10 @@
     }
 
     if (isTikTokBrowser()) {
-      // Показываем твою фотку без текста
       document.getElementById("content").innerHTML = `
         <img src="https://i.postimg.cc/w7SQjkky/image.png" alt="Open in Browser">
       `;
     } else {
-      // Если не TikTok — редирект
       window.location.href = "https://link.me/tg.gowero77";
     }
   </script>
