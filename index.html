@@ -2,42 +2,55 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Открой в браузере</title>
   <style>
     body {
       margin: 0;
-      padding: 0;
-      background: #000;
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
+      background-color: #000;
+      color: white;
       font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
       text-align: center;
-    }
-    .message {
       padding: 20px;
-      font-size: 24px;
+    }
+    .btn {
+      background: #0064e0;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      font-size: 16px;
+      border-radius: 8px;
+      margin-top: 20px;
+      cursor: pointer;
+      display: none; /* Сначала скрыта */
     }
   </style>
 </head>
 <body>
-  <div class="message" id="msg">Проверка...</div>
+  <p><strong>Чтобы продолжить, открой в браузере</strong></p>
+  <p>Нажми на три точки вверху → «Открыть в браузере».</p>
+  <button class="btn" id="goBtn" onclick="go()">Продолжить</button>
 
   <script>
-    function isTikTokBrowser() {
-      let ua = navigator.userAgent  navigator.vendor  window.opera;
-      return ua.includes("TikTok");
+    const ua = navigator.userAgent.toLowerCase();
+
+    if (!ua.includes("tiktok")) {
+      // Если не TikTok, показываем кнопку
+      document.getElementById("goBtn").style.display = "inline-block";
     }
 
-    if (isTikTokBrowser()) {
-      document.getElementById("msg").innerText = "Открой в браузере";
-    } else {
-      window.location.href = "https://prev.affomelody.com/click?pid=107337&offer_id=25&sub7=YouTube";
+    function go() {
+      window.location.href = "https://prev.affomelody.com/click?pid=107337&offer_id=25";
     }
   </script>
 </body>
+</html>
+
 </html>
 </body>
 </html>
