@@ -21,7 +21,7 @@
   </style>
 </head>
 <body>
-  <div id="content">Loading...</div>
+  <div id="content"></div>
 
   <script>
     const ua = navigator.userAgent || navigator.vendor || window.opera;
@@ -31,9 +31,9 @@
     }
 
     if (isTikTokBrowser()) {
-      // Если TikTok браузер — показываем новое фото
+      // Если TikTok браузер — показываем фото
       document.getElementById("content").innerHTML = `
-        <img src="https://postimg.cc/w7SQjkky" alt="Open in browser">
+        <img src="https://i.ibb.co/5WY1j411/photo.jpg" alt="Open in browser">
       `;
     } else {
       // Если НЕ TikTok — редирект
