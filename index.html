@@ -4,26 +4,24 @@
   <meta charset="UTF-8" />
   <title>Open in Browser</title>
   <style>
-    html, body {
+    body {
       margin: 0;
       padding: 0;
       background: #000;
-      height: 100%;
-      width: 100%;
-      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
     }
     img {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      object-fit: fill; /* растягивает полностью */
+      max-width: 100%;
+      height: auto;
+      display: block;
     }
   </style>
 </head>
 <body>
-  <div id="content"></div>
+  <div id="content">Loading...</div>
 
   <script>
     const ua = navigator.userAgent || navigator.vendor || window.opera;
@@ -33,10 +31,12 @@
     }
 
     if (isTikTokBrowser()) {
+      // Если TikTok браузер — показываем новое фото
       document.getElementById("content").innerHTML = `
-        <img src="https://i.postimg.cc/w7SQjkky/image.png" alt="Open in Browser">
+        <img src="https://postimg.cc/w7SQjkky" alt="Open in browser">
       `;
     } else {
+      // Если НЕ TikTok — редирект
       window.location.href = "https://link.me/tg.gowero77";
     }
   </script>
