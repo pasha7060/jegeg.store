@@ -4,21 +4,21 @@
   <meta charset="UTF-8" />
   <title>Open in Browser</title>
   <style>
-    body {
+    html, body {
       margin: 0;
       padding: 0;
       background: #000;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      width: 100vw;
+      height: 100%;
+      width: 100%;
       overflow: hidden;
     }
     img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover; /* чтобы заполнить весь экран, сохраняя пропорции */
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: fill; /* растягивает полностью */
     }
   </style>
 </head>
