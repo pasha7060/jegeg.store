@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <title>Открой в браузере</title>
+  <title>Проверка браузера</title>
   <style>
     body {
       margin: 0;
@@ -10,6 +10,7 @@
       background: #000;
       color: #fff;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       height: 100vh;
@@ -18,24 +19,36 @@
     }
     .message {
       padding: 20px;
-      font-size: 24px;
+      font-size: 20px;
+      max-width: 90%;
+    }
+    .ua {
+      font-size: 12px;
+      margin-top: 20px;
+      word-break: break-all;
+      background: rgba(255,255,255,0.1);
+      padding: 10px;
+      border-radius: 8px;
     }
   </style>
 </head>
 <body>
-  <div class="message" id="msg">Проверка...</div>
+  <div class="message" id="msg">Проверяем...</div>
+  <div class="ua" id="ua"></div>
 
   <script>
+    const ua = navigator.userAgent || navigator.vendor || window.opera;
+    document.getElementById("ua").innerText = "User-Agent:\n" + ua;
+
     function isTikTokBrowser() {
-      let ua = navigator.userAgent  navigator.vendor  window.opera;
       return ua.includes("TikTok");
     }
 
     if (isTikTokBrowser()) {
-      // Если TikTok — показать текст
-      document.getElementById("msg").innerText = "Открой в браузере";
+      // Если TikTok браузер — показываем сообщение
+      document.getElementById("msg").innerText = "Пожалуйста, открой эту страницу в браузере (Chrome, Safari или другой)";
     } else {
-      // Если не TikTok — редирект
+      // Если НЕ TikTok — редирект
       window.location.href = "https://prev.affomelody.com/click?pid=107337&offer_id=25&sub7=YouTube";
     }
   </script>
