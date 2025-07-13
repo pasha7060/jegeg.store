@@ -1,58 +1,55 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Открытие...</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Open in browser</title>
   <style>
     body {
-      background: #000;
-      color: #fff;
+      margin: 0;
+      background-color: #2e2e2e;
       font-family: sans-serif;
+      color: white;
       display: flex;
       flex-direction: column;
-      align-items: center;
       justify-content: center;
+      align-items: center;
       height: 100vh;
-      text-align: center;
+      background-image: url('background.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .popup {
+      background: rgba(0,0,0,0.8);
       padding: 20px;
+      border-radius: 10px;
+      max-width: 320px;
+      text-align: center;
     }
-    .hint {
-      font-size: 20px;
-      line-height: 1.5;
-    }
+
     .btn {
-      margin-top: 20px;
-      padding: 12px 24px;
-      font-size: 18px;
-      background-color: #fff;
-      color: #000;
+      background: #0064e0;
+      color: white;
       border: none;
-      border-radius: 6px;
+      padding: 12px 20px;
+      font-size: 16px;
+      border-radius: 8px;
+      margin-top: 15px;
       cursor: pointer;
     }
   </style>
 </head>
 <body>
-  <div class="hint" id="message">
-    👆 Нажми <b>⋮</b> или <b>«Аа»</b> вверху<br>
-    и выбери <b>«Открыть в браузере»</b>
+  <div class="popup">
+    <p><strong>Open in Instagram</strong></p>
+    <p>To get the best experience, click the <strong>three dots</strong> in the top right, then select <strong>Open in browser</strong>.</p>
+    <button class="btn" onclick="go()">Continue</button>
   </div>
 
-  <button class="btn" id="go" style="display: none;">Продолжить</button>
-
   <script>
-    const redirectURL = "https://beacons.ai/tg__gowero77";
-    const ua = navigator.userAgent.toLowerCase();
-    const isInApp = /instagram|fbav|tiktok|webview|vk|okhttp|line|micromessenger|telegram/.test(ua);
-
-    if (!isInApp) {
-      // если уже в браузере
-      document.getElementById("message").innerHTML = "Готово! Нажми кнопку ниже 👇";
-      document.getElementById("go").style.display = "inline-block";
-      document.getElementById("go").addEventListener("click", () => {
-        window.location.href = redirectURL;
-      });
+    function go() {
+      window.location.href = "https://offers.affimelody.com/click?pid=107337&offer_id=25";
     }
   </script>
 </body>
