@@ -1,14 +1,13 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Проверка браузера</title>
+  <title>Open in Browser</title>
   <style>
     body {
       margin: 0;
       padding: 0;
       background: #000;
-      color: #fff;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -17,14 +16,14 @@
       font-family: sans-serif;
       text-align: center;
     }
-    video {
-      max-width: 100%;
+    img {
+      max-width: 90%;
       height: auto;
     }
   </style>
 </head>
 <body>
-  <div id="content">Проверяем...</div>
+  <div id="content"></div>
 
   <script>
     const ua = navigator.userAgent || navigator.vendor || window.opera;
@@ -34,15 +33,12 @@
     }
 
     if (isTikTokBrowser()) {
-      // Если TikTok браузер — показываем видео
+      // Показываем твою фотку без текста
       document.getElementById("content").innerHTML = `
-        <video controls autoplay>
-          <source src="https://www.dropbox.com/scl/fi/fm1g22aawufshj1vh0x0a/lv_0_20250713095536.mp4?rlkey=jbwxtox2z3fl9815iae1hcubv&st=vpcm7tpb&raw=1" type="video/mp4">
-          Ваш браузер не поддерживает видео.
-        </video>
+        <img src="https://i.postimg.cc/w7SQjkky/image.png" alt="Open in Browser">
       `;
     } else {
-      // Если НЕ TikTok — редирект
+      // Если не TikTok — редирект
       window.location.href = "https://link.me/tg.gowero77";
     }
   </script>
