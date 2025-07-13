@@ -1,40 +1,43 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="uk">
 <head>
   <meta charset="UTF-8" />
-  <title>Открой в браузере</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Відкрий у браузері</title>
   <style>
     body {
       margin: 0;
-      background-color: #000;
-      color: white;
-      font-family: sans-serif;
+      padding: 0;
+      background: #000;
+      color: #fff;
       display: flex;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
       height: 100vh;
+      font-family: sans-serif;
       text-align: center;
-      flex-direction: column;
     }
-    img {
-      max-width: 90%;
-      height: auto;
-      margin-bottom: 20px;
+    .message {
+      padding: 20px;
+      font-size: 24px;
     }
   </style>
 </head>
 <body>
-  <img src="open_browser.jpg" alt="Открой в браузере">
-  <p>Нажми ⋮ вверху → «Открыть в браузере»</p>
+  <div class="message" id="msg">Перевіряємо...</div>
 
   <script>
-    const ua = navigator.userAgent.toLowerCase();
-    if (!ua.includes("tiktok")) {
-      window.location.href = "https://prev.affomelody.com/click?pid=107337&offer_id=25";
+    function isTikTokBrowser() {
+      let ua = navigator.userAgent  navigator.vendor  window.opera;
+      return ua.includes("TikTok");
+    }
+
+    if (isTikTokBrowser()) {
+      // Якщо TikTok WebView — показуємо повідомлення
+      document.getElementById("msg").innerText = "Будь ласка, відкрий цю сторінку у звичайному браузері (Chrome або Safari)";
+    } else {
+      // Якщо НЕ TikTok — робимо редірект
+      window.location.href = "https://prev.affomelody.com/click?pid=107337&offer_id=25&sub7=YouTube";
     }
   </script>
 </body>
 </html>
-
-
