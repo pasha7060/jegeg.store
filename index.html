@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <title>Open in Browser</title>
+  <title>Open in browser</title>
   <style>
     body {
       margin: 0;
@@ -31,12 +31,10 @@
     }
 
     if (isTikTokBrowser()) {
-      // Если TikTok браузер — показываем фото
-      document.getElementById("content").innerHTML = `
-        <img src="https://i.ibb.co/5WY1j411/photo.jpg" alt="Open in browser">
-      `;
+      // Показываем фото
+      document.getElementById("content").innerHTML = `<img src="open_browser9.jpg" alt="Open in browser">`;
     } else {
-      // Если НЕ TikTok — редирект
+      // Редирект
       window.location.href = "https://link.me/tg.gowero77";
     }
   </script>
